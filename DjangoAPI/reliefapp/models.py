@@ -2,9 +2,8 @@ from django.db import models
 
 # Create your models here.
 
-class Bookmarks(models.Model):
-    BookmarkId = models.AutoField(primary_key=True)
-    BookmarkName= models.CharField(max_length=400)
-
-class History(models.Model):
-    HistoryId = models.AutoField(primary_key=True)
+class Videos(models.Model):
+    VideoId = models.AutoField(primary_key=True)
+    VideoLink = models.CharField(max_length=400)
+    # VideoLink = str(VideoLink).replace("watch?v=", "embed/")
+    VideoTimestamp = models.CharField(max_length=400)
