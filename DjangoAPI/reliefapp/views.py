@@ -12,7 +12,7 @@ from reliefapp.serializers import BookmarkSerializer, HistorySerializer
 def historyApi(request,id=0):
     if request.method == 'GET':
          history = History.objects.all()
-         history_serializer = HistorySerializer(History, many=True)
+         history_serializer = HistorySerializer(history, many=True)
          return JsonResponse(history_serializer.data, safe=False)
 
     elif request.method == 'POST':
@@ -41,7 +41,7 @@ def historyApi(request,id=0):
 def bookmarkApi(request,id=0):
     if request.method == 'GET':
          bookmark = Bookmark.objects.all()
-         bookmark_serializer = BookmarkSerializer(Bookmark, many=True)
+         bookmark_serializer = BookmarkSerializer(bookmark, many=True)
          return JsonResponse(bookmark_serializer.data, safe=False)
 
     elif request.method == 'POST':
